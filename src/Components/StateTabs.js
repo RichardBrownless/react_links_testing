@@ -7,6 +7,11 @@ import Box from '@mui/material/Box';
 
 import {useLocation} from "react-router-dom";
 
+/*
+  Tab Panel example from MUI.com (https://mui.com/material-ui/react-tabs/)
+  modified to use location state to determine the initially selected tab.
+*/
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -41,9 +46,12 @@ function a11yProps(index) {
 }
 
 export default function StateTabs() {
+
+  // Tab number from location state
   const location = useLocation();
   const tabNum = location.state?.tabNum;
 
+  // Initial tab set to index retrieved from location state (or 0 if no state)
   const [value, setValue] = React.useState(tabNum || 0);
 
   const handleChange = (event, newValue) => {

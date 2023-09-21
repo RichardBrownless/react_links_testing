@@ -17,10 +17,14 @@ function App() {
         </div>
         <Routes>
           <Route path="/"></Route>
+          {/*page containing links that use URL parameters to pass data*/}
           <Route path="/UrlParametersFrom" element={<UrlParamsFrom />}/>
+          {/*path contains optional parameter to specify tab to switch to*/}
           <Route path="/UrlParametersTo/:tabNum?" element={<UrlParamsTo />}/>
-          <Route path="/StateTo" element={<StateTo />}/>
+          {/*page containing links that use location state to pass data*/}
           <Route path="/StateFrom" element={<StateFrom />}/>
+          {/*page that receives location state data to specify tab to switch to*/}
+          <Route path="/StateTo" element={<StateTo />}/>
         </Routes>
       </Router>
     </div>

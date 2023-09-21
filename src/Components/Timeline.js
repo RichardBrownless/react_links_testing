@@ -7,6 +7,11 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
+/* 
+  Timeline example from MUI.com (https://mui.com/material-ui/react-timeline/)
+  Modified to take an array of link information in props (path, state and label)
+*/
+
 const addItem = function(link, index, array) {
   return (
     <TimelineItem>

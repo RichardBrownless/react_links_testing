@@ -7,6 +7,11 @@ import Box from '@mui/material/Box';
 
 import {useParams} from "react-router-dom";
 
+/*
+  Tab Panel example from MUI.com (https://mui.com/material-ui/react-tabs/)
+  modified to use URL parameters to determine the initially selected tab.
+*/
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -41,8 +46,10 @@ function a11yProps(index) {
 }
 
 export default function UrlParamsTabs() {
+  // Tab number from URL parameter
   const {tabNum} = useParams();
 
+  // Initial tab set to index retrieved from parameter (or 0 if no parameter)
   const [value, setValue] = React.useState(parseInt(tabNum) || 0);
 
   const handleChange = (event, newValue) => {
